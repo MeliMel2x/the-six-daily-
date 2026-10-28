@@ -12,3 +12,39 @@
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 .story-graphic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .updates-section{scroll-margin-top:95px}
+
+/* V1.1 — Immersive, accessible in-app reader and gameplay topic filter */
+body.reader-active{overflow:hidden}
+.story-open{color:inherit;font:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;text-align:left;background:none;border:none;padding:0;cursor:pointer}
+.story-open:hover{color:#ffb8b1}
+.read-in-app{border:0;background:transparent;color:#f0c1a8;font:700 9px var(--mono);letter-spacing:.02em;display:flex;align-items:center;gap:8px;padding:2px 0;text-align:left}
+.read-in-app:hover{text-decoration:underline}
+.story-reader{position:fixed;inset:0;margin:auto;width:min(850px,calc(100vw - 28px));height:min(92dvh,850px);max-width:none;max-height:none;border:1px solid #594154;border-radius:18px;background:#111722;color:#faf7f5;box-shadow:0 25px 100px #000c;padding:0;overflow:hidden;overscroll-behavior:contain}
+.story-reader::backdrop{background:rgba(2,6,13,.84);backdrop-filter:blur(9px)}
+.reader-frame{height:100%;display:flex;flex-direction:column;min-height:0}
+.reader-header{display:flex;justify-content:space-between;align-items:center;background:#111622;padding:16px 24px;border-bottom:1px solid #313340;gap:14px;flex:none}
+.reader-wordmark{display:flex;gap:11px;align-items:center;font:800 21px/1 var(--cond);letter-spacing:.055em}
+.reader-wordmark b{color:#ffb1ba}.reader-wordmark small{display:block;font:700 8px var(--mono);color:#8996a9;margin-top:4px;letter-spacing:.12em}
+.reader-monogram{font:900 34px var(--cond);color:#ffb8a3}
+.reader-close{border:1px solid #343d4e;border-radius:6px;background:#1c2432;color:#e5e6ea;font:700 10px var(--mono);padding:11px 14px;display:flex;gap:9px;align-items:center}
+.reader-close:hover{background:#303545}
+.reader-scroll{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain}
+.reader-cover{height:225px;position:relative;overflow:hidden;background:#342232}
+.reader-cover img{width:100%;height:100%;object-fit:cover;display:block}
+.reader-cover:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#111722 0%,transparent 70%)}
+.reader-cover>span{position:absolute;bottom:18px;left:30px;font:900 55px/.9 var(--cond);letter-spacing:.055em;color:#fff;z-index:1;text-shadow:0 4px 15px #0005}
+.reader-article{max-width:720px;margin:0 auto;padding:25px 38px 60px}
+.reader-label{font:700 10px/1.7 var(--mono);letter-spacing:.07em;color:#ffb7a0}
+.reader-article h2{font:900 clamp(40px,5.2vw,66px)/.98 var(--cond);letter-spacing:.005em;margin:15px 0 16px}
+.reader-meta{font:700 10px var(--mono);color:#aeb6c4;padding-bottom:23px;border-bottom:1px solid #343d49}
+.reader-dek{color:#f0d3d0;font-size:17px;line-height:1.75;margin:24px 0}
+.reader-body{font-size:14px;line-height:1.9;color:#c8ced9}
+.reader-body h3{font:800 23px var(--cond);letter-spacing:.03em;color:#f4e7e8;margin:28px 0 10px}
+.reader-body p{margin:0 0 17px}
+.reader-unreviewed{display:inline-block;background:#3e3128;border:1px solid #846143;border-radius:5px;padding:9px 12px;color:#ffdcb0;font:700 10px/1.5 var(--mono)}
+.reader-note{padding:14px 17px;border-left:2px solid #eea6ad;background:#ffffff09;font-size:12px;color:#a9b3c4}
+.reader-footer{flex:none;display:flex;align-items:center;justify-content:space-between;gap:18px;border-top:1px solid #40404c;background:#181e2a;padding:16px 24px}
+.reader-credit{font:700 9px/1.6 var(--mono);color:#949dac;letter-spacing:.05em}.reader-credit span{color:#f4ab9b}
+.reader-original{display:inline-flex;align-items:center;gap:15px;justify-content:center;border-radius:6px;padding:14px 20px;background:linear-gradient(105deg,#f4c5ab,#fa9da7);color:#231a25;font:700 11px var(--mono);text-align:center}
+.reader-original:hover{filter:brightness(1.08)}
+@media(max-width:600px){.story-reader{width:100vw;height:100dvh;border-radius:0;border:0}.reader-header{padding:14px 17px}.reader-cover{height:180px}.reader-cover>span{left:18px;font-size:42px}.reader-article{padding:25px 21px 60px}.reader-article h2{font-size:clamp(39px,10vw,58px)}.reader-dek{font-size:15px}.reader-footer{padding:12px 16px calc(12px + env(safe-area-inset-bottom));align-items:center}.reader-credit{display:none}.reader-original{width:100%;padding:15px}.reader-close span{display:none}}

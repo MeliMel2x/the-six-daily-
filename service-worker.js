@@ -1,5 +1,5 @@
 /* Offline-capable app shell; third-party news remains network-first. */
-const CACHE = 'the-six-daily-v1';
+const CACHE = 'the-six-daily-v1.1';
 const SHELL = [
   './', './index.html', './styles.css', './app.js', './manifest.webmanifest',
   './assets/vice-city-hero.svg', './assets/card-sunset.svg', './assets/card-radio.svg',
