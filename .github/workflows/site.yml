@@ -1,0 +1,51 @@
+name: Refresh news and publish website
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    # Run hourly at minute 23 UTC. Actual start times may vary.
+    - cron: '23 * * * *'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Download project
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run headline parser tests
+        run: python -m unittest discover -s tests -v
+      - name: Refresh third-party headline feed
+        run: python scripts/update_news.py
+      - name: Prepare public website
+        run: |
+          mkdir -p _site
+          cp index.html styles.css app.js manifest.webmanifest service-worker.js _site/
+          cp -R assets data _site/
+          touch _site/.nojekyll
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Package website
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

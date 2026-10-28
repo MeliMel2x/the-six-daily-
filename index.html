@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a101d">
+  <meta name="description" content="The Six Daily — an independent Grand Theft Auto VI news and source tracker. Official updates, press coverage, and rumors clearly separated.">
+  <meta property="og:title" content="The Six Daily — GTA VI News, Without the Noise">
+  <meta property="og:description" content="Every signal from Leonida. Official Rockstar updates, sourced coverage, and a better way to follow GTA VI.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./styles.css">
+  <title>The Six Daily — Grand Theft Auto VI News</title>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="left-rail" aria-label="Site navigation">
+      <a class="brand" href="#home" aria-label="The Six Daily home">
+        <span class="brand-mark">VI<span class="mark-slash">/</span></span>
+        <span class="brand-wordmark">THE SIX <span>DAILY</span><small>LEONIDA NEWS DESK</small></span>
+      </a>
+      <div class="rail-divider"></div>
+      <span class="eyebrow rail-caption">YOUR CHANNELS</span>
+      <nav class="side-nav" aria-label="Sections">
+        <button class="nav-link active" type="button" data-filter="all"><span class="nav-ico">◈</span><span>Discover</span><span class="nav-count">01</span></button>
+        <button class="nav-link" type="button" data-filter="official"><span class="nav-ico">✳</span><span>Official drops</span></button>
+        <button class="nav-link" type="button" data-filter="coverage"><span class="nav-ico">▤</span><span>News coverage</span></button>
+        <button class="nav-link" type="button" data-filter="rumor"><span class="nav-ico">◎</span><span>Rumor watch</span></button>
+        <button class="nav-link" type="button" data-filter="saved"><span class="nav-ico">♡</span><span>Saved stories</span><span id="saved-count" class="nav-count">0</span></button>
+      </nav>
+      <div class="rail-divider rail-spaced"></div>
+      <span class="eyebrow rail-caption">DIRECT SOURCES</span>
+      <div class="source-links">
+        <a href="https://www.rockstargames.com/newswire" target="_blank" rel="noopener noreferrer"><span class="source-dot orange"></span> Rockstar Newswire <span>↗</span></a>
+        <a href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer"><span class="source-dot pink"></span> GTA VI official site <span>↗</span></a>
+      </div>
+      <div class="rail-bottom">
+        <div class="rail-callout"><span class="tiny-spark">✦</span><strong>Information over hype.</strong><p>Sources first. Speculation labeled. No fake confirmation.</p></div>
+        <span class="rail-footnote">INDEPENDENT FAN PROJECT · V1.0</span>
+      </div>
+    </aside>
+
+    <div class="workspace" id="home">
+      <header class="topbar">
+        <a class="mobile-brand" href="#home"><span class="mini-brand">VI/</span> THE SIX DAILY</a>
+        <div class="topbar-location"><span class="live-beacon"></span><span>LEONIDA INTELLIGENCE NETWORK</span><span class="topbar-separator">/</span><span id="current-date">OCT 28, 2026</span></div>
+        <div class="topbar-actions">
+          <button class="icon-button search-trigger" id="search-toggle" aria-label="Search stories" title="Search stories"><svg viewBox="0 0 24 24" fill="none"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="1.7"/><path d="m16 16 5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button>
+          <button class="follow-button" id="install-btn" type="button"><span>＋</span> <span id="install-text">Get the app</span></button>
+        </div>
+      </header>
+      <div id="search-bar" class="search-bar hidden"><label for="news-search" class="sr-only">Search news stories</label><span>⌕</span><input type="search" id="news-search" placeholder="Search headlines, sources, topics…" autocomplete="off"><button id="clear-search" type="button">Clear</button></div>
+
+      <main class="main-content">
+        <section class="masthead" aria-label="Welcome">
+          <div class="masthead-overline"><span class="orange-line"></span><span>THE HOME OF GTA VI COVERAGE</span><span class="masthead-issue">VOL. 001 / 2026</span></div>
+          <div class="masthead-title"><div>THE NEXT ERA</div><div class="accent-text">STARTS HERE<span class="period">.</span></div></div>
+          <p class="masthead-summary">Every headline. Every official drop. All the noise filtered out.<br class="desktop-break"> Your daily connection to Vice City and beyond.</p>
+        </section>
+
+        <section class="hero-grid" aria-label="Featured news and launch date">
+          <article class="hero-card">
+            <img class="hero-image" src="./assets/vice-city-hero.svg" alt="Original neon sunset illustration of a palm-lined coastal city" fetchpriority="high">
+            <div class="hero-noise"></div>
+            <div class="hero-content">
+              <div class="hero-topline"><span class="pill hero-pill">✳ OFFICIAL ROCKSTAR UPDATE</span><span class="feature-num">01 / FEATURED</span></div>
+              <div class="hero-bottom">
+                <div class="hero-date">OCTOBER 15, 2026 <span>·</span> ROCKSTAR GAMES</div>
+                <h1>THE LAUNCH<br>TRAILER IS <em>HERE.</em></h1>
+                <p>Rockstar revealed a new GTA VI launch trailer, bringing Jason, Lucia, and Leonida back into the spotlight.</p>
+                <div class="hero-buttons"><a href="https://www.rockstargames.com/newswire/article/517572321a549a/watch-the-grand-theft-auto-vi-launch-trailer" target="_blank" rel="noopener noreferrer" class="primary-button">Read original announcement <span>↗</span></a><button class="ghost-icon-button" id="hero-save" type="button" aria-label="Save featured story" aria-pressed="false">♡</button></div>
+              </div>
+            </div>
+          </article>
+          <div class="hero-aside">
+            <div class="countdown-card">
+              <span class="eyebrow">THE BIG DAY</span>
+              <div class="countdown-super">GRAND THEFT AUTO</div>
+              <div class="roman-six">VI<span>.</span></div>
+              <div class="countdown-divider"></div>
+              <div class="countdown-bottom"><div><span class="eyebrow countdown-label">THE COUNTDOWN</span><div class="countdown-number" id="days-left">22<span> DAYS</span></div></div><span class="countdown-calendar">NOV<br><b>19</b></span></div>
+              <div class="countdown-note">Scheduled release · PS5 &amp; Xbox Series X|S <a href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer" aria-label="Rockstar official GTA VI page">↗</a></div>
+            </div>
+            <div class="daily-note"><span class="daily-note-symbol">✦</span><div><span class="eyebrow">EDITOR'S NOTE</span><p>We link back to the original reporting. A headline is not a verified fact.</p></div></div>
+          </div>
+        </section>
+
+        <section class="updates-section" id="updates" aria-label="GTA VI news stories">
+          <div class="section-top"><div><div class="section-kicker"><span class="section-dash"></span> THE NEWSWIRE</div><h2>Latest <em>intel.</em></h2></div><div class="feed-status"><span class="live-beacon small"></span><span id="feed-status-text">CHECKING NEWS FEED</span></div></div>
+          <div class="feed-toolbar"><div class="filter-chips" role="group" aria-label="Filter stories"><button class="chip active" data-filter="all">All stories</button><button class="chip" data-filter="official">Official <span class="chip-dot official"></span></button><button class="chip" data-filter="coverage">Coverage</button><button class="chip" data-filter="rumor">Rumor watch</button><button class="chip" data-filter="saved">Saved</button></div><div class="sort-label" id="story-count">LOADING</div></div>
+          <div class="story-grid" id="story-grid" aria-live="polite"></div>
+          <div class="feed-footer" id="feed-footer"><button id="load-more" class="outline-button" type="button">Load more stories <span>↓</span></button><span class="feed-updated" id="feed-updated">Source timestamps shown on each story.</span></div>
+        </section>
+
+        <section class="mission-section"><div><span class="eyebrow">WHY THE SIX DAILY?</span><h2>LESS SCROLLING.<br><em>MORE SIGNAL.</em></h2><p>The internet is loud. We're building one calmer place to follow GTA VI: original sources first, independently written summaries for selected stories, and clear labels on third-party headlines.</p></div><div class="mission-stats"><div><strong>01</strong><span>Source-first reporting</span></div><div><strong>02</strong><span>Rumors clearly labeled</span></div><div><strong>03</strong><span>Made for the community</span></div></div></section>
+      </main>
+
+      <footer class="footer"><span>THE SIX DAILY <i>©</i> <span id="copyright-year">2026</span></span><span>Independent fan project. Not affiliated with or endorsed by Rockstar Games or Take-Two Interactive.</span><a href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer">OFFICIAL GTA VI ↗</a></footer>
+    </div>
+    <nav class="mobile-tabs" aria-label="Mobile navigation"><button class="mobile-tab active" data-filter="all"><span>◈</span>Discover</button><button class="mobile-tab" data-filter="official"><span>✳</span>Official</button><button class="mobile-tab" data-filter="coverage"><span>▤</span>Coverage</button><button class="mobile-tab" data-filter="saved"><span>♡</span>Saved</button></nav>
+  </div>
+
+  <dialog id="install-dialog" class="install-dialog"><form method="dialog"><button class="dialog-close" aria-label="Close">✕</button><div class="dialog-logo">VI/</div><span class="eyebrow">THE SIX ON YOUR HOME SCREEN</span><h3>Make it feel<br>like an app.</h3><p>On iPhone: open this website in Safari, tap Share, then choose <strong>Add to Home Screen</strong> and <strong>Open as Web App</strong>.</p><p>On Android or desktop: open your browser's menu and look for <strong>Install app</strong> or <strong>Add to Home Screen</strong>.</p><small>Installation works best after the website is published on HTTPS. Push alerts aren't part of this first version.</small><button class="primary-button dialog-ok" value="close">Got it <span>↗</span></button></form></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="./app.js" defer></script>
+</body>
+</html>
